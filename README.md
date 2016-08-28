@@ -1,5 +1,7 @@
 # Bloodwork
 
+[![CircleCI](https://circleci.com/gh/cowboyd/bloodwork/tree/master.svg?style=shield)](https://circleci.com/gh/cowboyd/bloodwork/tree/master)
+
 A predictive modeler for hemoglobin levels in the bloodstream.
 
 ## Prerequisites
