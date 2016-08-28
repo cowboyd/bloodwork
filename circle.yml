@@ -1,0 +1,10 @@
+dependencies:
+  cache_directories:
+    - bower_components
+  post:
+    - bower install
+deployment:
+  production:
+    branch: master
+    commands:
+      - ./node_modules/.bin/ember deploy production
