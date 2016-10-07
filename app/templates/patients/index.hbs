@@ -1,4 +1,4 @@
-<h1>Patients <button> Add New </button></h1>
+<h1>Patients {{#link-to "patients.new" tagName="button" }}Add{{/link-to}}</h1>
 <ul>
   {{#each model as |patient|}}
     <li>
