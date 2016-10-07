@@ -1,0 +1,25 @@
+<h1>New Patient</h1>
+{{#x-form validations=validations data=(hash) onSubmit=(route-action "save") as |form|}}
+  {{#form.field property="name" as |field|}}
+    <label>  Name:
+      {{one-way-input update=field.actions.onChange onBlur=field.actions.onBlur}}
+    </label>
+  {{/form.field}}
+  {{#form.field property="targetHgB" as |field|}}
+    <label> Target Minimum HgB:
+      {{one-way-input update=field.actions.onChange onBlur=field.actions.onBlur}}
+    </label>
+  {{/form.field}}
+  {{#form.field property="age" as |field|}}
+    {{log field}}
+    <label> Age:
+      {{one-way-input update=field.actions.onChange onBlur=field.actions.onBlur}}
+    </label>
+  {{/form.field}}
+  {{#form.field property="weight" as |field|}}
+    <label> Weight:
+      {{one-way-input update=field.actions.onChange onBlur=field.actions.onBlur}}
+    </label>
+  {{/form.field}}
+  <button {{action (action form.actions.submit)}} disabled={{form.isUnsubmittable}}>Create</button>
+{{/x-form}}

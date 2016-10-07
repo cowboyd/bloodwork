@@ -1,3 +1,3 @@
 export default function configure(server) {
-  server.createList('patient', 10);
+  server.createList('patient', 2);
 }

@@ -20,6 +20,6 @@ describe('Acceptance: ApplicationIndex', function() {
   });
 
   it("redirects to the patients route", function() {
-    expect(currentPath()).to.equal('patients');
+    expect(currentPath()).to.equal('patients.index');
   });
 });
