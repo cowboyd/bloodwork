@@ -10,5 +10,6 @@ export default DS.Model.extend({
   avatar: DS.attr(),
   age: Ember.computed('birthday', function() {
     return moment().diff(this.get('birthday'), 'years');
-  })
+  }),
+  gender: DS.attr()
 });
