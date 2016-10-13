@@ -9,6 +9,9 @@ export default DS.Model.extend({
   weightKg: Ember.computed('weight', function() {
     return 0.4536 * this.get('weight');
   }),
+  bloodVolumeDl: Ember.computed('weightKg', function() {
+    return 0.75 * this.get('weightKg');
+  }),
   targetHgB: DS.attr('number'),
   avatar: DS.attr(),
   age: Ember.computed('birthday', function() {
