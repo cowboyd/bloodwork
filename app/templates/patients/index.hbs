@@ -1,9 +1,15 @@
-<h1>Patients {{#link-to "patients.new" tagName="button" }}Add{{/link-to}}</h1>
-<ul>
-  {{#each model as |patient|}}
-    <li>
-      <img src="{{patient.avatar}}" height="25" width="25">
-      {{patient.name}}
-    </li>
-  {{/each}}
-</ul>
+<h1>Patients</h1>
+<table class="table table-striped">
+  <thead>
+    <tr><th>Name</th><th>Age</th><th>Gender</th></tr>
+  </thead>
+  <tbody>
+    {{#each model as |patient|}}
+      <tr>
+        <td>{{patient.name}}</td>
+        <td>{{patient.age}}</td>
+        <td>{{patient.gender}}</td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>
