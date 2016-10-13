@@ -6,4 +6,12 @@ export default function configure(server) {
     targetHgB: 9.5,
     gender: "M"
   });
+
+  let horace = server.create('patient', {
+    name: "Horace Moss",
+    birthday: new Date(1928, 1,2),
+    weight: 192,
+    targetHgB: 9,
+    gender: "M"
+  });
 }
