@@ -11,7 +11,7 @@ export default function configure(server) {
     name: "Horace Moss",
     birthday: new Date(1928, 1,2),
     weight: 192,
-    targetHgB: 9,
+    targetHgB: 8,
     gender: "M"
   });
 }
