@@ -9,6 +9,12 @@ const Router = Ember.Router.extend({
 Router.map(function() {
   this.route('patients', function() {
     this.route('new');
+    this.route('patient', {path: '/:id'}, function() {
+      this.route('details');
+      this.route('transfusions');
+      this.route('measurements');
+      this.route('predictions');
+    });
   });
 });
 
