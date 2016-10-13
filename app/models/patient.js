@@ -17,5 +17,8 @@ export default DS.Model.extend({
   age: Ember.computed('birthday', function() {
     return moment().diff(this.get('birthday'), 'years');
   }),
-  gender: DS.attr()
+  gender: DS.attr(),
+
+  transfusions: DS.hasMany('transfusion', {async: false}),
+  measurements: DS.hasMany('measurement', {async: false})
 });
