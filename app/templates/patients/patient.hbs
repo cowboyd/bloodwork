@@ -1,0 +1,8 @@
+<h1> {{model.name}} </h1>
+
+<ul class="nav nav-tabs">
+  {{#link-to "patients.patient.details" tagName="li"}} <a href="#">Details</a>{{/link-to}}
+  {{#link-to "patients.patient.transfusions" tagName="li"}} <a href="#">Transfusions</a>{{/link-to}}
+  {{#link-to "patients.patient.measurements" tagName="li"}} <a href="#">Measurements</a>{{/link-to}}
+  {{#link-to "patients.patient.predictions" tagName="li"}} <a href="#">Predictions</a>{{/link-to}}
+</ul>

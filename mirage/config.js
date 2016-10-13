@@ -26,4 +26,5 @@ export default function config() {
 
   this.get('/patients');
   this.post('/patients');
+  this.get('/patients/:id');
 }
