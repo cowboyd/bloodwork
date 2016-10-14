@@ -1,4 +1,5 @@
 import Ember from 'ember';
+import horaceData from './horace';
 
 function Measurements(server) {
   this.add = function(patient, attrs) {
@@ -32,11 +33,14 @@ export default function configure(server) {
     transfusions.add(phil, {date: new Date(), units: 3});
   });
 
-  server.create('patient', {
+  let horace = server.create('patient', {
     name: "Horace Moss",
     birthday: new Date(1928, 1,2),
     weight: 192,
     targetHgB: 8,
     gender: "M"
   });
+
+  horaceData.transfusions.forEach(t => transfusions.add(horace, t));
+  horaceData.measurements.forEach(t => measurements.add(horace, t));
 }
