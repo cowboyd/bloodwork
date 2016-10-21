@@ -4,6 +4,8 @@
       <th>#</th>
       <th>Date</th>
       <th>HgB Level</th>
+      <th>Transfused HgB</th>
+      <th>Endogenous HgB</th>
     </tr>
   </thead>
   <tbody>
@@ -12,6 +14,8 @@
         <td>{{index}}</td>
         <td>{{moment-format measurement.date "MMM DD YYYY"}}</td>
         <td>{{measurement.amount}}</td>
+        <td>{{round measurement.transfusedAmount}}</td>
+        <td>{{round measurement.endogenousAmount}}</td>
       </tr>
     {{/each}}
   </tbody>
