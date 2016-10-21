@@ -1,5 +1,6 @@
 import Ember from 'ember';
 import horaceData from './horace';
+import philData from './phil';
 
 function Measurements(server) {
   this.add = function(patient, attrs) {
@@ -25,13 +26,8 @@ export default function configure(server) {
     gender: "M"
   });
 
-  new Array(50).fill(0).forEach(function() {
-    measurements.add(phil, {date: new Date(), amount: 10});
-  });
-
-  new Array(15).fill(0).forEach(function() {
-    transfusions.add(phil, {date: new Date(), units: 3});
-  });
+  philData.transfusions.forEach(t => transfusions.add(phil, t));
+  philData.measurements.forEach(m => measurements.add(phil, m));
 
   let horace = server.create('patient', {
     name: "Horace Moss",
@@ -42,5 +38,5 @@ export default function configure(server) {
   });
 
   horaceData.transfusions.forEach(t => transfusions.add(horace, t));
-  horaceData.measurements.forEach(t => measurements.add(horace, t));
+  horaceData.measurements.forEach(m => measurements.add(horace, m));
 }
