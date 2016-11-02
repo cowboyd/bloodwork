@@ -1,0 +1,9 @@
+<svg height="{{height}}" width="{{width}}">
+  <path fill="none" d="{{path}}" stroke="black" stroke-width="3"/>
+  {{#each circles as |circle|}}
+    <circle strok-width="1" stroke="blue" cx="{{circle.x}}" cy="{{circle.y}}" r="3" fill="none"/>
+  {{/each}}
+  {{#each gridlines as |line|}}
+    <path fill="none" d="{{line}}" stroke="green" stroke-width="1"/>
+  {{/each}}
+</svg>

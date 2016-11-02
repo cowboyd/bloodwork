@@ -9,7 +9,7 @@
     </tr>
   </thead>
   <tbody>
-    {{#each model.measurements as |measurement index|}}
+    {{#each (sort-by "date:desc" model.measurements) as |measurement index|}}
       <tr>
         <td>{{index}}</td>
         <td>{{moment-format measurement.date "MMM DD YYYY"}}</td>
