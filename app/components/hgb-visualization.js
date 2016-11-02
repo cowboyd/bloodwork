@@ -1,7 +1,7 @@
 import Ember from 'ember';
 import moment from 'moment';
 import { scaleTime, scaleLinear } from 'd3-scale';
-import { line, curveBundle } from 'd3-shape';
+import { line, curveBasis } from 'd3-shape';
 
 export default Ember.Component.extend({
 
@@ -54,7 +54,7 @@ export default Ember.Component.extend({
         .domain([-5, 12])
         .range([0, this.get('height')]);
     let path = line()
-        .curve(curveBundle)
+        .curve(curveBasis)
         .x(d => x(d.date))
         .y(d => y(d.endogenousAmount));
     return path(this.get('measurements'));
