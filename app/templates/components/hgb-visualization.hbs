@@ -1,0 +1,25 @@
+<svg height="{{height}}" width="{{width}}">
+
+  {{!render each individual datapoint}}
+  {{#each circles as |circle|}}
+    <circle stroke-width="1" stroke="blue" cx="{{circle.x}}" cy="{{circle.y}}" r="3" fill="none"/>
+  {{/each}}
+
+  {{!the fitted curve through all the datapoints}}
+  <path fill="none" d="{{path}}" stroke="red" stroke-width="1"/>
+
+  {{! x-axis and labels}}
+  <path class="x-axis" stroke-width="1" stroke="black" d="M{{left}},{{bottom}}L{{right}},{{bottom}}"/>
+  <text class="x-min" x={{left}} y={{add bottom 15}}>{{moment-format minDate "MMM DD YYYY"}}</text>
+  <text class="x-max" x={{add right -50}} y={{add bottom 15}}>{{moment-format maxDate "MMM DD YYYY"}}</text>
+
+  {{! y-axis and labels}}
+  <path class="y-axis" stroke-width="1" stroke="black" d="M{{left}},{{bottom}}L{{left}},{{top}}"/>
+  <text class="y-min" x={{add left -20}} y={{bottom}}>{{minY}}</text>
+  <text class="y-min" x={{add left -20}} y={{top}}>{{maxY}}</text>
+
+  {{! lines to help measure y scale are spaced every 2 units}}
+  {{#each gridlines as |line|}}
+    <path class="gridline" stroke="green" d="M{{left}},{{line.y}}L{{right}},{{line.y}}" stroke-width="0.25"/>
+  {{/each}}
+</svg>
